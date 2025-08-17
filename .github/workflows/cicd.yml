@@ -20,7 +20,7 @@ jobs:
         run: gcloud auth configure-docker
 
       - name: Build Dataflow Flex Template Docker image
-        run: docker build -t robin-docker/${{ secrets.GCP_PROJECT_ID }}/dataflow-flex-template:latest .
+        run: docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/dataflow-flex-template:latest .
 
       - name: Push Docker image to GCR
-        run: docker push robin-docker/${{ secrets.GCP_PROJECT_ID }}/dataflow-flex-template:latest
+        run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/dataflow-flex-template:latest
